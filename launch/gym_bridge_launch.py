@@ -87,6 +87,11 @@ def generate_launch_description():
         executable='rl_pub',
         name='raceline_publisher'
     )
+    slicer_publisher = Node(
+        package='rl_slicer',
+        executable='slicer_pub',
+        name='slicer_publisher'
+    )
 
 
     # finalize
@@ -96,6 +101,7 @@ def generate_launch_description():
     ld.add_action(map_server_node)
     ld.add_action(ego_robot_publisher)
     ld.add_action(raceline_publisher)
+    ld.add_action(slicer_publisher)
     if has_opp:
         ld.add_action(opp_robot_publisher)
 
